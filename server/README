@@ -1,0 +1,20 @@
+Installer nodeJS : http://nodejs.org/
+(ajouter le bin au PATH)
+
+Installer mongoDB : http://www.mongodb.org/
+(Ajouter le bin au PATH)
+
+Lancer serveur MongoDb :
+mongod --dbpath chemin_stockage_bdd
+
+
+Installer les dépendances :
+- A la racine du projet :
+npm install
+
+Pour lancer le serveur en mode reboot auto sur changement de sources :
+npm install -g nodemon
+
+
+Pour executer les tests avec Mocha :
+npm install -g mocha
