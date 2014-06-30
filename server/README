@@ -1,4 +1,6 @@
-1# Installing :
+# Server NodeJS with CRUD API
+
+## Installing :
 
 Install nodeJS : http://nodejs.org/
 (add "bin" dir to PATH)
@@ -7,21 +9,45 @@ Install mongoDB : http://www.mongodb.org/
 (add "bin" dir to PATH)
 
 Install dependencies :
-npm install
+```sh
+$ npm install
+```
 
 
-2# Launching :
+## Launching :
 
 Launch MongoDb :
-mongod --dbpath path_to_store_data
+```sh
+$ mongod --dbpath path_to_store_data
+```
 
 Launching server with auto-reboot on sources change :
-Install : npm install -g nodemon
-Execute : nodemon server.js
+Install :
+```sh
+$ npm install -g nodemon
+```
+Execute :
+```sh
+$ nodemon server.js
+```
 
+then visit [http://localhost:3000](http://localhost:3000)
 
-3# Testing :
+## Testing :
 
 Install Mocha and execute tests :
-Install : npm install -g mocha
-Execute : mocha
+Install :
+```sh
+$ npm install -g mocha
+```
+Execute :
+```sh
+$ mocha
+```
+
+
+
+Infos :
+
+- Ref project to get skeleton and examples :
+https://github.com/madhums/node-express-mongoose-demo
