@@ -1,0 +1,28 @@
+{
+  "name": "Useful-links client",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Mabdylon/useful-links",
+  "authors": [
+    "Mabdylon <mathieu.barat@gmail.com>"
+  ],
+  "description": "An example of simple angular JS app to manage useful link you want to share",
+  "main": "app.js",
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "AngularJS",
+    "Links",
+    "Example",
+    "Sample"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
