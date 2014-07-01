@@ -48,7 +48,7 @@ exports.vote = function(req, res) {
         post.vote++;
         res.send('200', post);
     });
-}
+};
 
 exports.remove = function(req, res) {
     var id = req.params.id;
