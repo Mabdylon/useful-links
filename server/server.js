@@ -20,7 +20,7 @@ fs.readdirSync(models_path).forEach(function (file) {
 var app = express();
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/../client/src'));
-app.use(express.static(__dirname + '/../client/bower_components'));
+app.use('/bower_components', express.static(__dirname + '/../client/bower_components'));
 require('./config/routes.js')(app);
 
 var server = app.listen(3000, function() {
