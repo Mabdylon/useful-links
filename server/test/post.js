@@ -1,7 +1,6 @@
 var request = require('supertest'),
     should = require('should'),
     request = request('http://localhost:3000');
-
 describe('TEST POST WS', function() {
     describe('CRUD OPERATIONS', function() {
 
@@ -49,6 +48,15 @@ describe('TEST POST WS', function() {
                 .end(function(err, res) {
                     if(err) return done(err);
                     res.body.should.have.property('title', 'a new title');
+                    done();
+                });
+        });
+        it('SHOULD UDATE A POST WITH NEW VOTE', function(done) {
+            request.put('/posts/vote/'+post._id)
+                .expect(200)
+                .end(function(err, res) {
+                    if(err) return done(err);
+                    res.body.should.have.property('vote', 1);
                     done();
                 });
         });

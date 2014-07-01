@@ -5,6 +5,7 @@ var postSchema = new Schema({
     title: {type:String, trim: true},
     description : String,
     urls: [String],
+    vote: {type: Number, default:0},
     createdAt: { type: Date, default: Date.now}
 });
 
@@ -25,6 +26,7 @@ postSchema.statics = {
             .skip(options.perPage * options.page)
             .exec(callback);
     }
+
 };
 
 

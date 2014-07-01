@@ -41,6 +41,15 @@ exports.update = function(req, res) {
     });
 };
 
+exports.vote = function(req, res) {
+    var id = req.params.id;
+    Post.load(id, function(err, post) {
+        if(err) throw err;
+        post.vote++;
+        res.send('200', post);
+    });
+}
+
 exports.remove = function(req, res) {
     var id = req.params.id;
     Post.findByIdAndRemove(id, {}, function(err, deletedPost) {
