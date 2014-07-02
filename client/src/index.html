@@ -3,21 +3,28 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>UsefulLinks</title>
-    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
-    <script type="text/javascript" src="../bower_components/angular-route/angular-route.min.js"></script>
-    <script type="text/javascript" src="../bower_components/angular-resource/angular-resource.min.js"></script>
-    <script type="text/javascript" src="app/usefulLinks.js"></script>
+    <link type="text/css" rel="css/style.css"/>
+
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/header/header.js"></script>
+    <script type="text/javascript" src="app/links/view/viewLinks.js"></script>
+    <script type="text/javascript" src="app/links/edit/editLinks.js"></script>
+    <script type="text/javascript" src="app/notifications/notifications.js"></script>
 </head>
 <body>
 
-<header ng-controller="headerController">
-    {{header}}
+<header data-ng-include="'app/header/header.tpl.html'">
+
 </header>
-<section ng-controller="notificationsController">
-    {{notification}}
+
+<section data-ng-include="'app/notifications/notifications.tpl.html'">
 </section>
-<main ng-controller="mainController">
-    {{main}}
+
+<main ui-view>
 </main>
 
 </body>

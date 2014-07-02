@@ -1,0 +1,6 @@
+<h2>Browse POSTS</h2>
+
+<article ng-repeat="post in posts">
+    <h3>{{post.title}}</h3>
+    <details>{{post.description}}</details><button ui-sref="links.edit({id: post._id})">EDIT</button>
+</article>
