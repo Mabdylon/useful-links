@@ -1,16 +1,20 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+var mongoose = require('mongoose')
+    , Schema = mongoose.Schema;
 
 var postSchema = new Schema({
-    title: {type:String, trim: true},
+    title: { type:String, trim: true },
     description : String,
     urls: [String],
     vote: {type: Number, default:0},
-    createdAt: { type: Date, default: Date.now}
+    createdAt: { type: Date, default: Date.now },
+    comments : [ { 
+        email : { type:String, trim: true },
+        body : String,
+        createdAt: { type: Date, default: Date.now }
+    } ]
 });
 
 postSchema.path('title').required('true', 'title is required');
-
 postSchema.statics = {
 
     load: function(id, callback) {

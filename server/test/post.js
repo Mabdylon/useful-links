@@ -8,7 +8,15 @@ describe('TEST POST WS', function() {
             title:'new title',
             description : 'this is the description',
             urls: ['http://nodejs.org', 'http://mongoosejs.com']
-        };
+        },
+        comment = [{
+                body : "Lorem Ipsum est fili toto",
+                email : "benjamin.o.bunny@google.com"
+            }, {
+                body : "Lorem Ipsum est fili gigot",
+                email : "lauren.o.lunatic@google.com"
+            }
+        ];
 
         it('SHOULD INSERT A NEW POST', function(done) {
             request.post('/posts')
@@ -51,12 +59,25 @@ describe('TEST POST WS', function() {
                     done();
                 });
         });
-        it('SHOULD UDATE A POST WITH NEW VOTE', function(done) {
+        it('SHOULD UPDATE A POST WITH NEW VOTE', function(done) {
             request.put('/posts/vote/'+post._id)
                 .expect(200)
                 .end(function(err, res) {
                     if(err) return done(err);
                     res.body.should.have.property('vote', 1);
+                    done();
+                });
+        });
+        it('SHOULD UPDATE A POST WITH NEW COMMENT', function(done) {
+            request.put('/posts/comment/'+post._id)
+                .send(comment[0])
+                .expect(201)
+                .end(function(err, res) {
+                    if(err) return done(err);
+                    res.body.should.have.property('_id');
+                    res.body.should.have.property('createdAt');
+                    res.body.should.have.property('email');
+                    res.body.should.have.property('body');
                     done();
                 });
         });

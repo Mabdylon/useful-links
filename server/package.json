@@ -5,8 +5,13 @@
     "main": "nodemon server.js",
     "dependencies": {
         "body-parser": "^1.4.3",
-        "express": "4.4.4",
-        "mongoose": "3.8.12"
+        "express": "^4.4.4",
+        "express-session" : "^1.6.1",
+        "mongoose": "3.8.12",
+        "passport": ">= 0.0.0",
+        "passport-local": ">= 0.0.0",
+        "bcrypt-nodejs" : ">= 0.0.0"
+
     },
     "devDependencies": {
         "should": "^4.0.4",
