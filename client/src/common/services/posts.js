@@ -1,6 +1,6 @@
 angular.module('usefulLinks').factory('PostsFactory', function($resource) {
     return $resource(
-        '/posts/:id',
+        'http://localhost/posts/:id',
         {}, // Default params
         {
             query: {method: 'GET', isArray: true},
