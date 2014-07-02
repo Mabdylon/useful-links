@@ -1,4 +1,5 @@
-angular.module('usefulLinks').controller('ViewLinksController', function($scope) {
+angular.module('usefulLinks').controller('ViewLinksController', function($scope, PostsFactory) {
+
     $scope.posts = [
         {
             _id: '132132131232',
